@@ -13,8 +13,24 @@
     }
 
     body {
-      background-color: black;
+      background-color: #333;
       color: white;
+    }
+
+    @media screen and (min-width: 1301px) {
+      .title_text {
+        width: 50%;
+        margin: 0 auto;
+        margin-bottom: 30px;
+      }
+    }
+
+    @media screen and (max-width: 1300px) {
+      .title_text {
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 30px;
+      }
     }
 
     @media screen and (min-width: 1301px) {
@@ -116,8 +132,7 @@
 
 <body>
 
-
-  <section class="hero">
+  <!-- <section class="hero">
     <div class="hero-body column-bottom-padding" style="width: 100%">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
@@ -134,11 +149,11 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   
   <section class="hero">
-    <div class="intro">
+    <div class="title_text">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
