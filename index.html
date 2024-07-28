@@ -35,7 +35,8 @@
     } */
 
     @media screen and (min-width: 1301px) {
-      .middle_video {
+      .middle_video_test {
+        width: 60%;
         display: grid;
         place-items: center;
         margin-bottom: 30px;
@@ -43,18 +44,19 @@
     }
 
     @media screen and (max-width: 1300px) {
-      .middle_video {
+      .middle_video_test {
+        width: 90%;
         display: grid;
         place-items: center;
         margin-bottom: 30px;
       }
     }
 
-    /* .middle_video {
+    .middle_video {
       display: grid;
       place-items: center;
       margin-bottom: 30px;
-    } */
+    }
 
 
     @-webkit-keyframes fa-spin {
@@ -145,6 +147,13 @@
   </div>
 
 
+  
+  <div class="middle_video_test">
+    <iframe id="test12" src="https://www.youtube.com/embed/33bZIOLX4do?si=72C2rt5W8UkwPUYl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+  <script type="text/javascript">
+    document.getElementById("test12").style.height=document.getElementById("test12").scrollWidth*0.5625+"px";
+  </script>
   
   <div class="intro">
     <h2 class="title is-3">Overview</h2>
