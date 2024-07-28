@@ -140,9 +140,9 @@
 
 
   <div class=intro>
-    <span style="font-weight: 400;">WWWe present a novel self-supervised and embodied generative framework for autonomous driving.
-      Our approach emulates human-like behavior, which imagines what will happen in future scenarios before taking drive actions.
-      Instead of only predicting labeled agents in supervised learning methods, we predict the whole world for trajectory planning.
+    <span style="font-weight: 400;">The method, called EmbodiedPilot-1 (EP-1), extends trajectory planning by adding an imagine branch for predicting a high-quality future environment in parallel.
+      EP-1 leverages an extensive dataset of 30k hours of high-quality driving footage to generate a state-of-the-art two-minute videos capable of autonomous driving. 
+      Moreover, without human annotations, EP-1 is capable of generating sufficiently accurate traffic map and plausible behaviors of traffic participants, indicating a comprehensive understanding of the information that requires annotation.
     </span>
   </div>
 
@@ -170,18 +170,15 @@
 
   <div class=intro>
     <p>
-      <span style="font-weight: 400;">WWWe present a novel self-supervised and embodied generative framework for autonomous driving.
-        Our approach emulates human-like behavior, which imagines what will happen in future scenarios before taking drive actions.
-        Instead of only predicting labeled agents in supervised learning methods, we predict the whole world for trajectory planning.
-      </span>
-    </p>
-  </div>
-
-  <div class=intro>
-    <p>
-      <span style="font-weight: 400;">WWWe present a novel self-supervised and embodied generative framework for autonomous driving.
-        Our approach emulates human-like behavior, which imagines what will happen in future scenarios before taking drive actions.
-        Instead of only predicting labeled agents in supervised learning methods, we predict the whole world for trajectory planning.
+      <span style="font-weight: 400;">By observing others driving and then trying it oneself, any
+        17 year old can learn to drive in 20 hours of training, but
+        current autonomous driving algorithm struggles in urban.
+        We identify the cause of this issue as the information loss
+        incurred by the supervised learning methods, e.g. inaccu-
+        rate labeling precision and incomplete labeling categories
+        definition by human. Our goal in this work is to develop a
+        self-supervised embodied framework that learns like a hu-
+        man.
       </span>
     </p>
   </div>
@@ -194,23 +191,13 @@
   </script>
 
   <div class="intro">
-    <h2 class="title is-3">Model architecture and training</h2>
+    <h2 class="title is-3">Challenging Scenarios</h2>
   </div>
 
   <div class=intro>
     <p>
-      <span style="font-weight: 400;">WWWe present a novel self-supervised and embodied generative framework for autonomous driving.
-        Our approach emulates human-like behavior, which imagines what will happen in future scenarios before taking drive actions.
-        Instead of only predicting labeled agents in supervised learning methods, we predict the whole world for trajectory planning.
-      </span>
-    </p>
-  </div>
-
-  <div class=intro>
-    <p>
-      <span style="font-weight: 400;">WWWe present a novel self-supervised and embodied generative framework for autonomous driving.
-        Our approach emulates human-like behavior, which imagines what will happen in future scenarios before taking drive actions.
-        Instead of only predicting labeled agents in supervised learning methods, we predict the whole world for trajectory planning.
+      <span style="font-weight: 400;">EP-1 is capable of maintaining stable and normal driving, ensuring both safety and
+        a pleasant experience. The first column of images serves as real data prompts.
       </span>
     </p>
   </div>
@@ -221,6 +208,102 @@
   <script type="text/javascript">
     document.getElementById("video3").style.height=document.getElementById("video3").scrollWidth*0.5625+"px";
   </script>
+
+<div class="intro">
+  <h2 class="title is-3">Potentially Dangerous Imagination</h2>
+</div>
+
+<div class=intro>
+  <p>
+    <span style="font-weight: 400;">A scenario where parking occupies the lane. Due to an obstruction, EP-1 must pass by
+      using the opposite lane.
+    </span>
+  </p>
+</div>
+
+<div class=intro>
+  <p>
+    <span style="font-weight: 400;">1. Imagined environment: the leading vehicle successfully passes by using the opposite lane. Ego action: follows
+      closely and passes.
+    </span>
+  </p>
+</div>
+
+<div class="middle_video">
+  <iframe id="video3" width="100%" src="https://www.youtube.com/embed/33bZIOLX4do?si=72C2rt5W8UkwPUYl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+<script type="text/javascript">
+  document.getElementById("video3").style.height=document.getElementById("video3").scrollWidth*0.5625+"px";
+</script>
+
+<div class=intro>
+  <p>
+    <span style="font-weight: 400;">2. Imagined environment: the vehicle ahead stops, providing an open view. Ego action: overtakes by driving in the
+      opposite lane.
+    </span>
+  </p>
+</div>
+
+<div class="middle_video">
+  <iframe id="video3" width="100%" src="https://www.youtube.com/embed/33bZIOLX4do?si=72C2rt5W8UkwPUYl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+<script type="text/javascript">
+  document.getElementById("video3").style.height=document.getElementById("video3").scrollWidth*0.5625+"px";
+</script>
+
+<div class=intro>
+  <p>
+    <span style="font-weight: 400;">3. Imagined environment: the vehicle ahead fails to overtake and stops to meet oncoming traffic. Ego action: stops behind
+      to meet oncoming traffic.
+    </span>
+  </p>
+</div>
+
+<div class="middle_video">
+  <iframe id="video3" width="100%" src="https://www.youtube.com/embed/33bZIOLX4do?si=72C2rt5W8UkwPUYl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+<script type="text/javascript">
+  document.getElementById("video3").style.height=document.getElementById("video3").scrollWidth*0.5625+"px";
+</script>
+
+<div class="intro">
+  <h2 class="title is-3">Real-world accident prevention</h2>
+</div>
+
+<div class=intro>
+  <p>
+    <span style="font-weight: 400;">EP-1 anticipates the behavior of other vehicles, engages in strategic interactions and ensures safety.
+    </span>
+  </p>
+</div>
+
+<div class=intro>
+  <p>
+    <span style="font-weight: 400;">1. A merging vehicle.
+    </span>
+  </p>
+</div>
+
+<div class="middle_video">
+  <iframe id="video3" width="100%" src="https://www.youtube.com/embed/33bZIOLX4do?si=72C2rt5W8UkwPUYl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+<script type="text/javascript">
+  document.getElementById("video3").style.height=document.getElementById("video3").scrollWidth*0.5625+"px";
+</script>
+
+<div class=intro>
+  <p>
+    <span style="font-weight: 400;">2. A vehicle cutting in.
+    </span>
+  </p>
+</div>
+
+<div class="middle_video">
+  <iframe id="video3" width="100%" src="https://www.youtube.com/embed/33bZIOLX4do?si=72C2rt5W8UkwPUYl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+<script type="text/javascript">
+  document.getElementById("video3").style.height=document.getElementById("video3").scrollWidth*0.5625+"px";
+</script>
 
 </body>
 </html>
